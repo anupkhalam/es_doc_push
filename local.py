@@ -5,6 +5,12 @@ Created on Mon Mar 26 09:56:00 2018
 
 @author: anup
 """
+import os
+print (os.getcwd())
+wdr = '/home/anup/03_test_scripts/08_elastic_search/kg'
+os.chdir(wdr)
+del wdr
+print (os.getcwd())
 
 class Date(object):
 
@@ -32,8 +38,8 @@ print (is_date.day)
 
 from abc import ABCMeta, abstractmethod
 import abc
-class Estimator(object):
-    __metaclass__  = abc.ABCMeta
+class Estimator(metaclass  = abc.ABCMeta):
+    
     @abc.abstractmethod
     def abc1():
         """test 1"""
@@ -54,13 +60,79 @@ class testclass(Estimator):
     def abc1():
         print ("test1")
         return 42
+    def abc2():
+        print ("test2")
+        return 45
     
     
     
 w = Estimator()
 p=testclass()
+p.abc1
+
 g = p.abc1()
 k = p.abc2(1)
-   
+
+
+
+import abc
+
+class PluginBase(metaclass=abc.ABCMeta):
+
+    @abc.abstractmethod
+    def load(self, input):
+        """Retrieve data from the input source
+        and return an object.
+        """
+
+    @abc.abstractmethod
+    def save(self, output, data):
+        """Save the data object to the output."""
+
+
+
+import abc
+#from abc_base import PluginBase
+
+
+class LocalBaseClass:
+    pass
+
+
+@PluginBase.register
+class RegisteredImplementation(LocalBaseClass):
+
+    def load(self, input):
+        return input.read()
+
+    def save(self, output, data):
+        return output.write(data)
+
+
+if __name__ == '__main__':
+    print('Subclass:', issubclass(RegisteredImplementation1,
+                                  PluginBase))
+    print('Instance:', isinstance(RegisteredImplementation1(),
+                                  PluginBase))
+
+class RegisteredImplementation1(PluginBase):
+
+    def load(self, input):
+        return input.read()
+
+d = RegisteredImplementation1()
+
+@PluginBase.register
+class IncompleteImplementation(PluginBase):
+
+    def save(self, output, data):
+        return output.write(data)
+
+
+if __name__ == '__main__':
+    print('Subclass:', issubclass(IncompleteImplementation,
+                                  PluginBase))
+    print('Instance:', isinstance(IncompleteImplementation(),
+                                  PluginBase))
     
     

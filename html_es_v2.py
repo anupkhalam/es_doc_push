@@ -6,11 +6,10 @@ Created on Fri Mar 23 11:27:48 2018
 @author: anup
 """
 
-
 from elasticsearch import Elasticsearch
 from bs4 import BeautifulSoup as BS
 import glob
-from pre_process import EsInputPreprocessing
+from preprocess_class import EsPreProcessor
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -128,8 +127,8 @@ def es_index_create(files_location, index_1_names, index_2_names, pre_processor)
         
         
         for key, value in section_dict.items():
-            value_instance = EsInputPreprocessing(value, pre_processor)
-            section_dict[key] = value_instance.es_input_pre_processing()
+            value_instance = EsPreProcessor.EsPreprocessor_Manager(value, pre_processor)
+            section_dict[key] = value_instance.es_pre_processed_corpus
         
         
         es = Elasticsearch()
@@ -149,13 +148,17 @@ def es_search_processor(es_sch_doctype,
 
 
 files_location = '/home/anup/03_test_scripts/08_elastic_search/kg'
-index_1_names = ['index_1', 'doc_type_1']
-index_2_names = ['index_2', 'doc_type_2']
-pre_processor = {1:{'tokenizer' : 'word_tokenize', # Number '1' denotes first processor set. Any number of processor may be defined in the pipeline.
-                    'stemmer' : 'porterstemmer', 
-                    'joiner' : [' '], # 'joiner' must be a list with single element.
-                    'replacer' : None}} # 'replacer' must be a list with two elements. First element: char to be replaced; Second element: Char to be placed.
+index_1_names = ['index_3', 'doc_type_1']
+index_2_names = ['index_4', 'doc_type_2']
+pre_processor = {'preprocessor': [
+    {'name':'tokenizer','param':[{'tokenizer':'word_tokenize'}]},
+    {'name':'stemmer','param':[{'stemmer':'PorterStemmer'}]},
+    {'name':'joiner','param':[{'joiner':'&&&&'}]},
+    {'name':'replacer','param':[{'replacer':['the','$$$']},
+    {'replacer':['assumption','asssssssssumption']}]}]}
 es_index_create(files_location, index_1_names, index_2_names, pre_processor)
+
+
 
 
 es_search_index = 'index_2'
