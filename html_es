@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 19 17:11:11 2018
+
+@author: anup
+"""
+#
+#import os
+#print (os.getcwd())
+#wdr = '/home/anup/03_test_scripts/08_elastic_search/kg'
+#os.chdir(wdr)
+#del wdr
+#print (os.getcwd())
+
+
+from elasticsearch import Elasticsearch
+from bs4 import BeautifulSoup as BS
+import re
+#import sys
+#
+#filename  = open('out1','w')
+#sys.stdout = filename
+
+es = Elasticsearch()
+
+
+#file_list = ['doc_1.html','doc_2.html','doc_3.html']
+file_list = ['doc_4.html','doc_5.html']
+#file_list = ['doc_1.html']
+
+
+index_name_1 = 'index_1'
+doc_type_name_1 = 'dtype_1'
+index_name_2 = 'index_2'
+doc_type_name_2 = 'dtype_2'
+
+use_less_attribute_list = ["class", "id", "name", "style", "face", "size", "align", "width", "height", "cellspacing", "cellpadding", "start", "color", "bgcolor", "valign", "start"]
+use_less_tag_list = ['img','meta','title','head','style','table']
+
+for file_no in range(len(file_list)):
+    with open(file_list[file_no]) as f:
+        temp_html_file = [line.rstrip() for line in f]
+        html_file = ''
+        html_strip_file = ''
+        for line in temp_html_file:
+            html_file += (line + '\n')
+            html_strip_file += (line)
+        html = html_strip_file
+        soup = BS(html)
+        headers = soup.find_all(re.compile(r"^h"))
+        headers_text = [header.get_text() for header in headers]
+        headers_text_list=[]
+        for item in headers_text:
+            processed_item = item.strip().replace("\t", ' ').replace('  ', ' ').replace('  ', ' ')
+            if len(processed_item) < 200 and len(processed_item) > 0:
+                headers_text_list.append(processed_item)
+        soup = BS(html)
+        for tag in soup():
+            for attribute in use_less_attribute_list:
+                del tag[attribute]
+        for use_less_tag in use_less_tag_list:
+            while len(soup.find_all(use_less_tag)) > 0:
+                tag_string ='soup.' + use_less_tag + '.extract()'
+                exec(tag_string)
+        for x in soup.find_all():
+            if len(x.text) == 0:
+                x.extract()
+        section_dict_h1 = {}
+        for header1 in soup.find_all('h1'):
+            header1_tag = header1.findNext('p').text
+            header1_text = header1.get_text()
+            section_dict_h1[header1_text.strip().replace("\t", ' ').replace('  ', ' ').replace('  ', ' ')] = header1_tag
+        section_dict_h2 = {}
+        for header1 in soup.find_all('h2'):
+            header1_tag = header1.findNext('p').text
+            header1_text = header1.get_text()
+            section_dict_h2[header1_text.strip().replace("\t", ' ').replace('  ', ' ').replace('  ', ' ')] = header1_tag
+        section_dict_h3 = {}
+        for header1 in soup.find_all('h3'):
+            header1_tag = header1.findNext('p').text
+            header1_text = header1.get_text()
+            section_dict_h3[header1_text.strip().replace("\t", ' ').replace('  ', ' ').replace('  ', ' ')] = header1_tag
+        section_dict_h4 = {}
+        for header1 in soup.find_all('h4'):
+            header1_tag = header1.findNext('p').text
+            header1_text = header1.get_text()
+            section_dict_h4[header1_text.strip().replace("\t", ' ').replace('  ', ' ').replace('  ', ' ')] = header1_tag
+        section_dict = {**section_dict_h1, **section_dict_h2, **section_dict_h3, **section_dict_h4}
+    es.index(index=index_name_1, doc_type=doc_type_name_1, id=(file_no + 1), body={"html": html_file, "headers" : headers_text_list})
+    es.index(index=index_name_2, doc_type=doc_type_name_2, id=(file_no + 1), body = section_dict)
+
+
+#Nice way to get header
+#p=mark.parent.findChildren('h1')
+
+
+section_dict_h1 = {}
+first_h1_tag = soup.find("h1")
+h1_tag_list=first_h1_tag.parent.findChildren('h1')
+for h1_tag in h1_tag_list:
+    h1_tag_count=0
+    h1_tag_siblings=h1_tag.nextSiblingGenerator()
+    h1_tag_sibling_list = []
+    for h1_tag_sibling in h1_tag_siblings:
+        if h1_tag_sibling.name == 'h1':
+            h1_tag_count += 1
+        if h1_tag_count > 0:
+            section_dict_h1[h1_tag.get_text()] = ' '.join(h1_tag_sibling_list)
+            break
+        h1_tag_sibling_list.append(h1_tag_sibling.get_text())
+         
+
+section_dict_h2 = {}
+first_h2_tag = soup.find("h1")
+h2_tag_list=first_h2_tag.parent.findChildren('h2')
+for h2_tag in h2_tag_list:
+    h1_h2_tag_count = 0
+    h2_tag_siblings = h2_tag.nextSiblingGenerator()
+    h2_tag_sibling_list = []
+    for h2_tag_sibling in h2_tag_siblings:
+        if h2_tag_sibling.name == 'h2' or h2_tag_sibling.name == 'h1':
+            h1_h2_tag_count += 1
+        if h1_h2_tag_count > 0:
+            section_dict_h2[h2_tag.get_text()] = ' '.join(h2_tag_sibling_list)
+            break
+        h2_tag_sibling_list.append(h2_tag_sibling.get_text())
+
+
+
+
+
+
+    j,k=0,0
+    p=mark.nextSiblingGenerator()
+    for i in p:
+        if i.name in ['h2','h3','h4']:
+            j+=1
+        if i.name == 'h1':
+            k+=1
+        if j>0 or k>0:
+            break
+        print(i)

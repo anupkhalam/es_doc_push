@@ -1,0 +1,1213 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="date" content="2017-05-08T08:47:00Z" />
+<meta name="Total-Time" content="358" />
+<meta name="extended-properties:AppVersion" content="16.0000" />
+<meta name="meta:paragraph-count" content="30" />
+<meta name="subject" content="Version 0.1" />
+<meta name="Word-Count" content="2309" />
+<meta name="meta:line-count" content="109" />
+<meta name="Template" content="Normal" />
+<meta name="Paragraph-Count" content="30" />
+<meta name="meta:character-count-with-spaces" content="15441" />
+<meta name="dc:title" content="GBS IT - Standard Operating Procedures to Edit the DNS Hostname and Resolution for a VPC" />
+<meta name="modified" content="2017-05-08T08:47:00Z" />
+<meta name="cp:subject" content="Version 0.1" />
+<meta name="meta:author" content="Rishabh Singh" />
+<meta name="meta:creation-date" content="2017-05-05T07:56:00Z" />
+<meta name="extended-properties:Application" content="Microsoft Office Word" />
+<meta name="Creation-Date" content="2017-05-05T07:56:00Z" />
+<meta name="resourceName" content="AWS-N-G3-000545.docx" />
+<meta name="Character-Count-With-Spaces" content="15441" />
+<meta name="Last-Author" content="Kritika Bahl" />
+<meta name="Character Count" content="13162" />
+<meta name="Page-Count" content="21" />
+<meta name="Application-Version" content="16.0000" />
+<meta name="extended-properties:Template" content="Normal" />
+<meta name="Author" content="Rishabh Singh" />
+<meta name="publisher" content="Wolters Kluwer" />
+<meta name="meta:page-count" content="21" />
+<meta name="cp:revision" content="109" />
+<meta name="meta:word-count" content="2309" />
+<meta name="dc:creator" content="Rishabh Singh" />
+<meta name="extended-properties:Company" content="Wolters Kluwer" />
+<meta name="dcterms:created" content="2017-05-05T07:56:00Z" />
+<meta name="Last-Modified" content="2017-05-08T08:47:00Z" />
+<meta name="dcterms:modified" content="2017-05-08T08:47:00Z" />
+<meta name="Last-Save-Date" content="2017-05-08T08:47:00Z" />
+<meta name="meta:character-count" content="13162" />
+<meta name="Line-Count" content="109" />
+<meta name="meta:save-date" content="2017-05-08T08:47:00Z" />
+<meta name="Application-Name" content="Microsoft Office Word" />
+<meta name="extended-properties:TotalTime" content="358" />
+<meta name="Content-Type" content="application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.microsoft.ooxml.OOXMLParser" />
+<meta name="creator" content="Rishabh Singh" />
+<meta name="custom:ContentTypeId" content="0x010100A0AC9E0B79997547B10375B956D29F0C" />
+<meta name="meta:last-author" content="Kritika Bahl" />
+<meta name="xmpTPg:NPages" content="21" />
+<meta name="Revision-Number" content="109" />
+<meta name="dc:publisher" content="Wolters Kluwer" />
+<title>GBS IT - Standard Operating Procedures to Edit the DNS Hostname and Resolution for a VPC</title>
+</head>
+<body><p class="header"><img src="embedded:image28.png" alt="Image result for wolters kluwer logo" /></p>
+<p>Wolters Kluwer
+GBS IT - Standard Operating Procedures to Edit the DNS Hostname and Resolution for a VPC	
+Version 0.1
+
+
+
+Rishabh Singh	4/25/2017	
+
+
+
+</p>
+<p />
+<h1><a name="_Toc481054898" /><b>Document Control</b></h1>
+<h2 class="subtitle" />
+<h2><a name="_Toc481054899" />Revision History</h2>
+<table><tbody><tr>	<td><p><b>Version No.</b></p>
+</td>	<td><p><b>Date</b></p>
+</td>	<td><p><b>Prepared by / Reviewed by</b></p>
+</td>	<td><p><b>Change Description</b></p>
+</td></tr>
+<tr>	<td><p class="table_body">0.1</p>
+</td>	<td><p class="table_body">25th April 2017</p>
+</td>	<td><p class="table_body">Rishabh Singh</p>
+</td>	<td><p class="table_body">Initial Draft</p>
+</td></tr>
+<tr>	<td><p class="table_body" />
+</td>	<td><p class="table_body" />
+</td>	<td><p class="table_body" />
+</td>	<td><p class="table_body" />
+</td></tr>
+<tr>	<td><p class="table_body" />
+</td>	<td><p class="table_body" />
+</td>	<td><p class="table_body" />
+</td>	<td><p class="table_body" />
+</td></tr>
+</tbody></table>
+<p />
+<h2><a name="_Toc481054900" />Approval Details</h2>
+<table><tbody><tr>	<td><p><b>Version No.</b></p>
+</td>	<td><p><b>Date</b></p>
+</td>	<td><p><b>Approval by</b></p>
+</td>	<td><p class="block_Text">Change Description</p>
+</td></tr>
+<tr>	<td><p />
+</td>	<td><p />
+</td>	<td><p />
+</td>	<td><p />
+</td></tr>
+<tr>	<td><p />
+</td>	<td><p />
+</td>	<td><p />
+</td>	<td><p />
+</td></tr>
+</tbody></table>
+<p />
+<p>
+</p>
+<p />
+<p>Table of Contents
+Document Control	1
+Revision History	1
+Approval Details	1
+1	Preface	3
+2	Overview	3
+3	Assumptions/Pre-requisites	4
+4	Procedural Activities	4
+4.1	Access to AWS console (VDC)	4
+4.1.1	Steps to Login	4
+4.1.2	Login to WK Portal	5
+4.2	Steps to view DNS settings in a VPC via console	5
+4.3	Steps to view DNS settings in a VPC via AWS CLI	7
+4.4	Relevance of setting the DNS values in a VPC:	8
+4.5	Updating VPCs DNS settings via console:	9
+4.6	Updating VPCs DNS settings via AWS CLI:	11
+5	Validations and Examples:	12
+5.1	Validating DNS changes/effects after updating DNS settings for a VPC:	12
+5.2	Using Private Hosted Zone with a VPC	16
+5.3	Using custom DHCP Option Set in a VPC	19
+6	Appendix	22
+6.1	Supporting Documents	22
+</p>
+<p>	</p>
+<p>
+</p>
+<h1>1. <a name="_Toc481054901" />Preface</h1>
+<p>The purpose of this document is to explain the process “How to edit the DNS Hostname and Resolution for a VPC”. </p>
+<h1><a name="_Toc481054902" />Overview</h1>
+<p class="list_Paragraph">· Amazon VPC is a virtual network available on AWS Cloud. It resembles the traditional data centre network with ability of scaling.</p>
+<p class="list_Paragraph">· Amazon VPC uses an inbuilt DNS Server for name resolution by default. The DNS (Domain Name System) is a governing mechanism by which names are resolved to IPs on the Internet.</p>
+<p class="list_Paragraph">· A custom DNS naming system can be used in Amazon Cloud by making use of DHCP Option Set. By default, Amazon Managed DHCP Option set is used with VPC. In case of special requirements in WK Environment to have custom hostnames, user can make use of custom DHCP Option Set. Refer Section 5.3 to see how to change DHCP set used in VPC.</p>
+<p class="list_Paragraph">· When instances are launched in a VPC, AWS provides public and private names to the instances, that resolve to public and private IPv4 addresses respectively.</p>
+<p class="list_Paragraph">· Format for Amazon provided hostnames:</p>
+<p class="list_Paragraph">· Private: ip-private-ipv4-address.ec2.internal for us-east-1 region and, </p>
+<p class="list_Paragraph">ip-private-ipv4-address.region.compute.internal for other regions.</p>
+<p class="list_Paragraph">· Public: ec2-public-ipv4-address.compute-1.amazonaws.com for the us-east-1 region and </p>
+<p class="list_Paragraph">ec2-public-ipv4-address.region.amazonaws.com for other regions.</p>
+<p class="list_Paragraph">· Amazon VPC provides mechanism to manage DNS in the environment. Two options govern the DNS mappings inside VPC:</p>
+<p class="list_Paragraph">· <b>DNS Hostname:</b> “enableDnsHostnames” is an option that governs whether instances launched inside a VPC gets a public hostname or not.</p>
+<p class="list_Paragraph">· <b>DNS Resolution:</b> “enableDnsSupport” is an option that indicates that the DNS names provided are resolvable or not inside the VPC.</p>
+<p class="list_Paragraph">· Both these options can either be set to TRUE or FALSE. The use of setting these values is covered in later sections.</p>
+<p class="list_Paragraph">· Amazon VPC also allows using Privately Managed Hosted Zones inside VPC for private name resolution which can be utilized if Private Environments exist inside the WK Environment. Refer Section 5.2 to see an example of using Private Hosted Zones in VPC.</p>
+<p>
+</p>
+<h1><a name="_Toc481054903" />Assumptions/Pre-requisites</h1>
+<p class="list_Paragraph">· The user must have access to the AWS Console with proper set of permissions.</p>
+<p class="list_Paragraph">· As per best practice; if it is an IAM user, it is assumed that the Access/Secret Keys have been generated for the user. (It is required to connect to AWS, corresponding to WK VDC account using AWS CLI)</p>
+<p class="list_Paragraph">· The user is aware of the changes that will take place while modifying DNS settings inside VPC.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><b>NOTE</b>: If instances/services make use of hostnames for communication, turning the DNS settings to false will impact communication. Special attention should be taken while making changes in a working environment.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">· AWS CLI must be configured properly with correct set of keys and proper permissions. Refer Section 6/SharePoint Link to find SOP for configuring AWS CLI.</p>
+<p class="list_Paragraph">· User must have the proper VPC name and/or VPC ID before continuing. Changes must be made to proper VPC.</p>
+<h1><a name="_Toc481054904" />Procedural Activities</h1>
+<h2><a name="_Toc481054905" />Access to AWS console (VDC)</h2>
+<h3><a name="_Toc481054906" />Steps to Login</h3>
+<p class="list_Paragraph">1. Access the URL provided for your account, For Example - <a href="https://AccountID.signin.aws.amazon.com/console">https://AccountID.signin.aws.amazon.com/console</a></p>
+<p>Please check the AWS ID corresponding to WK VDC account on which VPC DNS settings have to be modified. </p>
+<p class="list_Paragraph">2. Login to your account using the credentials (User Name and Password) provided.</p>
+<p />
+<p><img src="embedded:image1.png" alt="" /></p>
+<h3><a name="_Toc481054907" />Login to WK Portal</h3>
+<p><i>To be discussed (If SSO or MFA AD authentication is being used) </i></p>
+<p />
+<h2><a name="_Toc481054908" />Steps to view DNS settings in a VPC via console</h2>
+<p class="list_Paragraph">1. Once you have logged into your account, select the region and then navigate to the VPC service from the Services drop-down menu on AWS Console.</p>
+<p class="list_Paragraph">Alternatively, follow the link - <a href="https://console.aws.amazon.com/vpc/">https://console.aws.amazon.com/vpc/</a></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image2.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p><img src="embedded:image3.png" alt="" /></p>
+<p />
+<p />
+<p />
+<p class="list_Paragraph">2. On the VPC Dashboard, select <b>Your VPCs</b> or select the VPC link displayed.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image4.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph" />
+<p class="list_Paragraph">3. From the VPCs list, select the VPC (based on VPC Name/ID) for which DNS settings have to be viewed. View the <b>Summary</b> section below the VPC list.</p>
+<p class="list_Paragraph" />
+<p><img src="embedded:image5.png" alt="" /></p>
+<p>User can see the DNS settings. Here the DNS resolution is set to yes which means that the private hostnames will be resolved to corresponding IPs but since the DNS hostname has been set to no, the instances will not get a public hostname after launch.</p>
+<p><b>NOTE</b>: The VPC shown above is not a default VPC. In case of default VPC, both the options - DNS hostname and DNS resolution will be set to yes.</p>
+<p />
+<p />
+<h2><a name="_Toc481054909" />Steps to view DNS settings in a VPC via AWS CLI</h2>
+<p class="list_Paragraph">1. Configure CLI with appropriate set of keys, also ensure the correct region has been set by issuing <b>aws configure</b> command.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image6.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">2. Issue the describe VPC attribute command to view the attributes associated with required VPC. Note that the user will need the VPCs ID to issue this command.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">For DNS Resolution:</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image7.png" alt="" /></p>
+<p />
+<p><b>Command: </b></p>
+<p>aws ec2 describe-vpc-attribute --vpc-id <i>id-of-vpc</i> --attribute enableDnsSupport</p>
+<p class="list_Paragraph">For DNS Hostname Support:</p>
+<p class="list_Paragraph" />
+<p><img src="embedded:image8.png" alt="" /></p>
+<p><b>Command:</b></p>
+<p>aws ec2 describe-vpc-attribute –vpc-id id-of-vpc –attribute enableDnsHostnames</p>
+<p class="list_Paragraph">User will see the attributes associated with VPC.</p>
+<p />
+<h2><a name="_Toc481054910" />Relevance of setting the DNS values in a VPC:</h2>
+<p class="list_Paragraph">· When the settings for DNS are updated in VPC, following changes occur:</p>
+<p class="list_Paragraph">· If both values are set to <b>True</b>,</p>
+<p class="list_Paragraph">· EC2 instances in VPC will get a public DNS hostname</p>
+<p class="list_Paragraph">· Amazon managed DNS Server will resolve Amazon provided private DNS hostnames.</p>
+<p class="list_Paragraph">· If both/either values are set to False,</p>
+<p class="list_Paragraph">· EC2 instances do not receive a public hostname</p>
+<p class="list_Paragraph">· Amazon managed DNS Server can’t resolve Amazon provided private DNS hostname</p>
+<p class="list_Paragraph">· By default, both the options are set to <b>True,</b> in default VPC and VPCs created via VPC Wizard. Only DNS support is set to Yes when VPCs are created manually via Console, CLI or SDK.</p>
+<p />
+<h2><a name="_Toc481054911" />Updating VPCs DNS settings via console:</h2>
+<p class="list_Paragraph">1. After logging in to the WK VDC account, move to the VPC service from Services drop-down menu.</p>
+<p class="list_Paragraph" />
+<p><img src="embedded:image3.png" alt="" /></p>
+<p class="list_Paragraph">2. In the VPC Dashboard, navigate to Your VPCs or select the VPC link.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image4.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">3. In the VPC list, select the VPC (based on VPC Name/ID) for which the DNS settings have to be updated. Click on <b>Actions</b> on the top and select <b>Edit DNS Hostnames</b> from the drop-down menu.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image9.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">4. Select Yes/No as per the requirement and then click <b>Save</b>.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image10.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">5. Selecting Yes, will enable Public Hostnames for instances launched in this VPC for both existing and new instances. Selecting No, will disable the same.</p>
+<p class="list_Paragraph" />
+<h2>Steps to edit DNS Resolution.</h2>
+<p class="list_Paragraph">1. After reaching the VPC dashboard, select the VPC for which the resolution has to be updated. Click on <b>Actions</b> button at the top and then click on <b>Edit DNS Resolution</b>.</p>
+<p />
+<p><img src="embedded:image11.png" alt="" /></p>
+<p class="list_Paragraph">2. Based on the requirement, select Yes/No and the click on <b>Save</b>.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image12.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">3. Selecting Yes will enable hostname resolution to IP for public and private hostnames. Selecting No, will disable such resolution.</p>
+<p class="list_Paragraph">4. User may see the changes made to DNS settings as described in Section 4.2 and 4.3.</p>
+<p class="list_Paragraph" />
+<h2><a name="_Toc481054912" />Updating VPCs DNS settings via AWS CLI:</h2>
+<p class="list_Paragraph">1. Configure CLI with appropriate set of keys, also ensure that the correct region has been set by issuing <b>aws configure</b> command.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image6.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">2. Issue the modify VPC attribute command to modify the attributes associated with required VPC. Note that the user will need the VPCs ID to issue this command.</p>
+<p class="list_Paragraph">Also, both DNS settings have been turned to false for this example and are being turned to True/yes in the following step.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image13.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><b>Command</b>:</p>
+<p>aws ec2 modify-vpc-attribute –vpc-id id-of-vpc –enable-dns-support “{\”Value\”:true}”</p>
+<p>aws ec2 modify-vpc-attribute –vpc-id id-of-vpc –enable-dns-hostnames “{\”Value\”:true}”</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><b>NOTE</b>: The above commands do not return any Output. User can validate the changes as described in Section 4.2 and 4.3.</p>
+<h1><a name="_Toc481054913" />Validations and Examples:</h1>
+<h2><a name="_Toc481054914" />Validating DNS changes/effects after updating DNS settings for VPC:</h2>
+<p class="list_Paragraph">1. User can view the changes made to the DNS Settings for VPC on the AWS Console and via AWS CLI as described in Section 4.2 and 4.3.</p>
+<p class="list_Paragraph">2. This section will present a walk through on how to validate the settings for DNS for any Amazon VPC.</p>
+<p class="list_Paragraph">3. For explanation purpose, the VPC used has been modified such that both the settings for DNS Hostname and DNS Resolution have been set to No. A test instance has been launched in the VPC to explain the effect for DNS changes in VPC.</p>
+<p class="list_Paragraph">4. User can see the DNS Hostnames for an EC2 instance in the EC2 Dashboard.</p>
+<p class="list_Paragraph">5. Navigate to the EC2 service from the AWS Dashboard by using the Services drop-down menu.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image14.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">6. Once on the EC2 dashboard, select Running Instances.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image15.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">7. Select the Instance for which DNS settings have to be validated. Note that this instance is present in the VPC which has been modified. User must ensure that correct instance is selected by checking the VPC Name/ID in the Instance Description page.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image16.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">8. On the Description tab user can see the settings for the instances.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image17.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">9. User can note that since the DNS settings have been turned to No, the instance has a public IP but does not have a public hostname.</p>
+<p class="list_Paragraph">10. Next, enable the DNS settings to Yes as described in Section 4.5 and 4.6.</p>
+<p class="list_Paragraph" />
+<h2>Validating DNS Hostnames for EC2 after updating DNS Settings in VPC to Yes</h2>
+<p class="list_Paragraph">1. Navigate to the EC2 service from the AWS Dashboard by using the Services drop-down menu.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image14.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph" />
+<p class="list_Paragraph">2. Once on the EC2 dashboard, select Running Instances.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image15.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph" />
+<p class="list_Paragraph">3. Select the Instance for which DNS settings have to be validated. Note that this instance is present in the VPC which has been modified.</p>
+<p class="list_Paragraph" />
+<p><img src="embedded:image16.png" alt="" /></p>
+<p class="list_Paragraph">4. On the <b>Description</b> tab user can see the settings for the instances.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image18.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">5. After updating the VPCs DNS Settings, the Public Hostname for EC2 instance is available.</p>
+<p class="list_Paragraph">6. User can also use this hostname to communicate with the EC2 instance as now this Hostname will resolve to IP address of the instance.</p>
+<p class="list_Paragraph">7. To validate whether Hostname is resolved to correct IP address, user can make use of the tracert/ping command:</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image19.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">8. User can see the Public Hostname for EC2 is resolvable to its Public IP address over the Internet.</p>
+<p class="list_Paragraph">9. This validates the DNS Settings for Amazon VPC.</p>
+<p class="list_Paragraph" />
+<h2><a name="_Toc481054915" />Using Private Hosted Zone with a VPC</h2>
+<p class="list_Paragraph">1. Users can also make use of AWS Route 53 to create and manage a private hosted zone for their environment.</p>
+<p class="list_Paragraph">2. To associate a Private Hosted Zone with any VPC, navigate to the Route 53 console from AWS Dashboard using the Services drop-down menu.</p>
+<p class="list_Paragraph" />
+<p><img src="embedded:image20.png" alt="" /></p>
+<p class="list_Paragraph">3. On the Route 53 dashboard, select Hosted Zones.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image21.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">4. Click on the private hosted zone which needs to be associated with any VPC.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image22.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">5. On the right, <b>Hosted Zone Details</b> panel will appear. </p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image23.png" alt="" /></p>
+<p class="list_Paragraph"><b>NOTE</b>: As mentioned in the panel also, the VPC to be associated, must have DNS Hostnames and DNS Resolutions settings to be Yes/True. Before proceeding further, user must switch DNS Settings for the VPC to True/Yes as indicated in Section 4.5 and 4.6.</p>
+<p class="list_Paragraph">6. On the VPC ID tab, enter the VPC ID to be associated, else click on the text area to get list of all available VPCs. After selecting VPC, click on <b>Associate New VPC button</b>.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image24.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">7. The added VPC will have the new settings for DNS Hostnames. Records can be created within this Private Zone to use with EC2 instances inside VPC. Refer the document “How to create new Hosted Zones in Amazon Route 53” in Section 6 to follow the steps for creating a private hosted zone.</p>
+<p class="list_Paragraph"><b>Limitation:</b></p>
+<p class="list_Paragraph">8. AWS Route53 health checks cannot be associated with resource records sets in a privately hosted zones.</p>
+<p class="list_Paragraph" />
+<h2><a name="_Toc481054916" />Using custom DHCP Option Set in a VPC</h2>
+<p class="list_Paragraph">1. <a name="_GoBack" />User can make use of a custom DNS Server instead of using Amazon provided DNS Server. DHCP Option sets enable a user to create a custom DNS network for their VPC by allowing custom domain names for their EC2 and name to IP resolution by using a self-managed DNS Server.</p>
+<p class="list_Paragraph">2. The Options available with a DHCP Option Group are:</p>
+<p class="list_Paragraph">· <b>domain-name-servers</b>: This field is used to enter the IP address of a custom DNS Server. Default DHCP set uses Amazon Managed DNS Server. Users can enter up to 4 IPs of 4 DNS Servers to use custom domain names.</p>
+<p class="list_Paragraph">· <b>domain-name</b>: This field is used to enter the domain name to be used with user’s environment. Here, the user may enter a custom domain name like “wolterskluwer.com” or can use Amazon managed domain names like in us-east-1, specify ec2.internal, else in another region, specify region.compute.internal.</p>
+<p class="list_Paragraph">· <b>ntp-servers</b>: The IP address of up to 4 NTP Servers.</p>
+<p class="list_Paragraph">· <b>netbios-name-servers</b>: The IP address of up to 4 NetBIOS name servers.</p>
+<p class="list_Paragraph">· <b>netbios-node-type</b>: The NetBIOS node type (1,2,4 or 8). Recommended value is 2.</p>
+<p />
+<p><img src="embedded:image25.png" alt="" /></p>
+<p>Refer the document, “Working with DHCP Options Sets” in Section 6 to know more about DHCP Options sets and processes involved in their creation and modification.</p>
+<p class="list_Paragraph">3. <b>To associate a Custom DHCP Option Set with any Amazon VPC, follow the steps:</b></p>
+<p class="list_Paragraph">· Navigate to the VPC console from services drop-down menu on AWS Dashboard.</p>
+<p class="list_Paragraph" />
+<p><img src="embedded:image3.png" alt="" /></p>
+<p class="list_Paragraph">· On the VPC Dashboard, select <b>Your VPCs</b> or select the VPC link displayed.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image4.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">· Select the VPC for which Custom DHCP Option Set has to be selected. Click on Actions button at the top and select Edit DHCP Options Set from the drop-down menu.</p>
+<p class="list_Paragraph"><img src="embedded:image26.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">· From the DHCP Option set list, select the Option Set’s ID which needs to be associated and click on Save.</p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph"><img src="embedded:image27.png" alt="" /></p>
+<p class="list_Paragraph" />
+<p class="list_Paragraph">· The new settings will be applied to the existing, as well as new instances. There will be no need to restart the servers.</p>
+<p />
+<h1><a name="_Toc481054917" />Appendix</h1>
+<h2><a name="_Toc481054918" />Supporting Documents</h2>
+<p class="normal_(Web)">· Installing and configuring AWS CLI</p>
+<p class="normal_(Web)">· How to create new Hosted Zones in Amazon Route 53 (TBD)</p>
+<p class="normal_(Web)">· Working with DHCP Options Sets (TBD)</p>
+<p />
+<p />
+<table><tbody><tr>	<td><p class="footer" />
+</td>	<td><p class="footer">19</p>
+</td></tr>
+</tbody></table>
+<p class="footer" />
+</body></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="311" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image1.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=608, height=311, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId10" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="608" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image1.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="608" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="311" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="491" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image2.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=1235, height=491, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId12" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="1235" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image2.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="1235" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="491" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="546" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image3.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=671, height=546, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId13" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="671" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image3.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="671" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="546" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="377" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image4.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=690, height=377, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId14" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="690" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image4.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="690" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="377" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="295" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image5.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=924, height=295, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId15" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="924" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image5.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="924" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="295" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="139" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image6.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=443, height=139, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId16" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="443" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image6.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="443" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="139" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="145" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image7.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=820, height=145, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId17" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="820" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image7.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="820" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="145" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="130" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image8.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=840, height=130, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId18" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="840" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image8.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="840" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="130" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="304" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image9.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=435, height=304, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId19" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="435" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image9.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="435" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="304" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="195" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image10.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=453, height=195, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId20" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="453" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image10.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="453" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="195" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="289" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image11.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=414, height=289, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId21" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="414" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image11.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="414" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="289" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="193" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image12.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=452, height=193, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId22" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="452" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image12.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="452" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="193" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="68" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image13.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=927, height=68, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId23" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="927" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image13.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="927" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="68" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="326" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image14.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=495, height=326, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId24" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="495" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image14.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="495" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="326" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="325" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image15.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=843, height=325, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId25" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="843" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image15.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="843" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="325" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="201" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image16.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=508, height=201, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId26" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="508" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image16.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="508" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="201" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="410" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image17.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=1046, height=410, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId27" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="1046" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image17.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="1046" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="410" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="286" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image18.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=1028, height=286, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId28" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="1028" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image18.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="1028" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="286" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="104" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image19.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=697, height=104, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId29" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="697" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image19.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="697" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="104" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="575" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="Dimension VerticalPixelSize" content="0.26462027" />
+<meta name="IHDR" content="width=821, height=575, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="embeddedRelationshipId" content="rId30" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="575" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="pHYs" content="pixelsPerUnitXAxis=3780, pixelsPerUnitYAxis=3779, unitSpecifier=meter" />
+<meta name="Dimension PixelAspectRatio" content="1.0002646" />
+<meta name="resourceName" content="image20.png" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Dimension HorizontalPixelSize" content="0.26455027" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="821" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image20.png" />
+<meta name="tiff:ImageWidth" content="821" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="268" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image21.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=495, height=268, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId31" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="495" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image21.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="495" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="268" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="249" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="Dimension VerticalPixelSize" content="0.26455027" />
+<meta name="IHDR" content="width=558, height=249, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="embeddedRelationshipId" content="rId32" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="249" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="pHYs" content="pixelsPerUnitXAxis=3779, pixelsPerUnitYAxis=3780, unitSpecifier=meter" />
+<meta name="Dimension PixelAspectRatio" content="0.9997355" />
+<meta name="resourceName" content="image22.png" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Dimension HorizontalPixelSize" content="0.26462027" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="558" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image22.png" />
+<meta name="tiff:ImageWidth" content="558" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="532" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="Dimension VerticalPixelSize" content="0.26462027" />
+<meta name="IHDR" content="width=428, height=532, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="embeddedRelationshipId" content="rId33" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="532" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="pHYs" content="pixelsPerUnitXAxis=3780, pixelsPerUnitYAxis=3779, unitSpecifier=meter" />
+<meta name="Dimension PixelAspectRatio" content="1.0002646" />
+<meta name="resourceName" content="image23.png" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Dimension HorizontalPixelSize" content="0.26455027" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="428" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image23.png" />
+<meta name="tiff:ImageWidth" content="428" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="494" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image24.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=448, height=494, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId34" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="448" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image24.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="448" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="494" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="387" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image25.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=701, height=387, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId35" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="701" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image25.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="701" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="387" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="291" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image26.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=420, height=291, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId36" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="420" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image26.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="420" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="291" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="Transparency Alpha" content="none" />
+<meta name="tiff:ImageLength" content="177" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image27.png" />
+<meta name="Data BitsPerSample" content="8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=453, height=177, bitDepth=8, colorType=RGB, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="sRGB" content="Perceptual" />
+<meta name="embeddedRelationshipId" content="rId37" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="453" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image27.png" />
+<meta name="tiff:BitsPerSample" content="8 8 8" />
+<meta name="tiff:ImageWidth" content="453" />
+<meta name="Chroma NumChannels" content="3" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="177" />
+<title></title>
+</head>
+<body /></html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Transparency Alpha" content="nonpremultipled" />
+<meta name="tiff:ImageLength" content="423" />
+<meta name="Compression CompressionTypeName" content="deflate" />
+<meta name="Data BitsPerSample" content="8 8 8 8" />
+<meta name="Data PlanarConfiguration" content="PixelInterleaved" />
+<meta name="IHDR" content="width=2000, height=423, bitDepth=8, colorType=RGBAlpha, compressionMethod=deflate, filterMethod=adaptive, interlaceMethod=none" />
+<meta name="embeddedRelationshipId" content="rId1" />
+<meta name="Chroma ColorSpaceType" content="RGB" />
+<meta name="tiff:BitsPerSample" content="8 8 8 8" />
+<meta name="Content-Type" content="image/png" />
+<meta name="height" content="423" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-Parsed-By" content="org.apache.tika.parser.image.ImageParser" />
+<meta name="bKGD bKGD_RGB" content="red=255, green=255, blue=255" />
+<meta name="Dimension PixelAspectRatio" content="1.0" />
+<meta name="resourceName" content="image28.png" />
+<meta name="Compression NumProgressiveScans" content="1" />
+<meta name="Chroma BlackIsZero" content="true" />
+<meta name="Compression Lossless" content="true" />
+<meta name="width" content="2000" />
+<meta name="Dimension ImageOrientation" content="Normal" />
+<meta name="X-TIKA:embedded_resource_path" content="/image28.png" />
+<meta name="tiff:ImageWidth" content="2000" />
+<meta name="Chroma BackgroundColor" content="red=255, green=255, blue=255" />
+<meta name="Chroma NumChannels" content="4" />
+<meta name="Data SampleFormat" content="UnsignedIntegral" />
+<title></title>
+</head>
+<body /></html>
