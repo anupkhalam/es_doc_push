@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 26 13:23:43 2018
+
+@author: anup
+"""
+
+class EsPreProcessor(object):
+    def __init__(self, es_corpus_data = None, es_preprocessor = None):
+        self.es_corpus_data = es_corpus_data
+        self.es_preprocessor = es_preprocessor
+        for preprocessor in self.es_preprocessor:
+            component_preprocessor = get_preprocessor(preprocessor)
+            component_parameters = get_parameters(preprocessor)
+            preprocessed_corpus = get_preprocessed_corpus(component_preprocessor,component_parameters)
+        
+        
+        
+    
+    @classmethod
+    def EsPreprocessor_Manager(cls, es_corpus_data, es_preprocessor):
+        es_corpus_data, es_preprocessor = es_corpus_data, es_preprocessor['preprocessor']
+        EsPreProcessor_instance = cls(es_corpus_data, es_preprocessor)
+        return EsPreProcessor_instance
+    
+
+
+    
