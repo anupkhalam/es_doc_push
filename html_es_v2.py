@@ -127,7 +127,7 @@ def es_index_create(files_location, index_1_names, index_2_names, pre_processor)
         
         
         for key, value in section_dict.items():
-            value_instance = EsPreProcessor.EsPreprocessor_Manager(value, pre_processor)
+            value_instance = EsPreProcessor.es_preprocessor_manager(value, pre_processor)
             section_dict[key] = value_instance.es_pre_processed_corpus
         
         
