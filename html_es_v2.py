@@ -18,8 +18,7 @@ warnings.filterwarnings('ignore')
 
 def es_index_create(files_location, index_1_names, index_2_names, pre_processor):
     file_list = glob.glob(files_location + '/*.html')
-    use_less_attribute_list = ["class", "id", "name", "style", "face", "size", "align", "width", "height", "cellspacing", "cellpadding", "start", "color", "bgcolor", "valign", "start"]
-    use_less_tag_list = ['img','meta','title','head','style','table']
+#    headers_list = ['h1','h2']
     headers_list = ['h1','h2','h3','h4','h5']
     for file_no in range(len(file_list)):
         with open(file_list[file_no]) as f:
@@ -31,129 +30,121 @@ def es_index_create(files_location, index_1_names, index_2_names, pre_processor)
                 html_strip_file += (line)
             html = html_strip_file
 
-
+        # full html extraction
         section_dict_full_html = full_html_extraction(html_file)
 
-
-        soup = BS(html)
-        soup.find(lambda tag:tag.name == 'head' and tag.find(lambda t:t.name == 'style')).extract()
-        es_full_text = soup.get_text()
-        section_dict_full_text = {}
-        section_dict_full_text['Full Text'] = es_full_text
+        # full text extraction
+        section_dict_full_text = full_text_extraction(BS(html))
         
+        # full headers extraction
+        section_dict_headers = full_headers_extraction(BS(html), headers_list)
+
+        # header content extraction
+        section_dict_headers_contents = full_header_content_extraction(BS(html), headers_list)
         
-        headers_indexing_list = []
-        try:
-            for headers_tag in headers_list:
-                first_tag = soup.find(headers_tag)
-                tag_list=first_tag.parent.findChildren(headers_tag)
-                headers_indexing_list.extend(tag_list)
-        except AttributeError:
-            pass
-        headers_indexing_list = [i.get_text() for i in headers_indexing_list if i is not None]
-        section_dict_headers_list = {}
-        section_dict_headers_list["headers"] = headers_indexing_list
-        
-
-        soup = BS(html)
-        for tag in soup():
-            for attribute in use_less_attribute_list:
-                del tag[attribute]
-        for use_less_tag in use_less_tag_list:
-            while len(soup.find_all(use_less_tag)) > 0:
-                tag_string ='soup.' + use_less_tag + '.extract()'
-                exec(tag_string)
-        for x in soup.find_all():
-            if len(x.text) == 0:
-                x.extract()
-
-        
-        section_dict_h1 = {}
-        first_h1_tag = soup.find("h1")
-        h1_tag_list=first_h1_tag.parent.findChildren('h1')
-        for h1_tag in h1_tag_list:
-            h1_tag_count=0
-            h1_tag_siblings=h1_tag.nextSiblingGenerator()
-            h1_tag_sibling_list = []
-            for h1_tag_sibling in h1_tag_siblings:
-                if h1_tag_sibling.name in ['h1']:
-                    h1_tag_count += 1
-                if h1_tag_count > 0:
-                    section_dict_h1[h1_tag.get_text()] = ' '.join(h1_tag_sibling_list)
-                    break
-                try:
-                    h1_tag_sibling_list.append(h1_tag_sibling.get_text())
-                except AttributeError:
-                    pass
-
-
-        section_dict_h2 = {}
-        first_h2_tag = soup.find("h1")
-        h2_tag_list=first_h2_tag.parent.findChildren('h2')
-        for h2_tag in h2_tag_list:
-            h1_h2_tag_count = 0
-            h2_tag_siblings = h2_tag.nextSiblingGenerator()
-            h2_tag_sibling_list = []
-            for h2_tag_sibling in h2_tag_siblings:
-                if h2_tag_sibling.name in ['h1','h2']:
-                    h1_h2_tag_count += 1
-                if h1_h2_tag_count > 0:
-                    section_dict_h2[h2_tag.get_text()] = ' '.join(h2_tag_sibling_list)
-                    break
-                try:
-                    h2_tag_sibling_list.append(h2_tag_sibling.get_text())
-                except AttributeError:
-                    pass
             
-            
-        section_dict_h3 = {}
-        first_h3_tag = soup.find("h1")
-        h3_tag_list=first_h3_tag.parent.findChildren('h3')
-        for h3_tag in h3_tag_list:
-            h1_h2_h3_tag_count = 0
-            h3_tag_siblings = h3_tag.nextSiblingGenerator()
-            h3_tag_sibling_list = []
-            for h3_tag_sibling in h3_tag_siblings:
-                if h3_tag_sibling.name in ['h1','h2','h3']:
-                    h1_h2_h3_tag_count += 1
-                if h1_h2_h3_tag_count > 0:
-                    section_dict_h3[h3_tag.get_text()] = ' '.join(h3_tag_sibling_list)
-                    break
-                try:
-                    h3_tag_sibling_list.append(h3_tag_sibling.get_text())
-                except AttributeError:
-                    pass
-
-
-        section_dict_h4 = {}
-        first_h4_tag = soup.find("h1")
-        h4_tag_list=first_h4_tag.parent.findChildren('h4')
-        for h4_tag in h4_tag_list:
-            h1_h2_h3_h4_tag_count = 0
-            h4_tag_siblings = h4_tag.nextSiblingGenerator()
-            h4_tag_sibling_list = []
-            for h4_tag_sibling in h4_tag_siblings:
-                if h4_tag_sibling.name in ['h1','h2','h3','h4']:
-                    h1_h2_h3_h4_tag_count += 1
-                if h1_h2_h3_h4_tag_count > 0:
-                    section_dict_h4[h4_tag.get_text()] = ' '.join(h4_tag_sibling_list)
-                    break
-                try:
-                    h4_tag_sibling_list.append(h4_tag_sibling.get_text())
-                except AttributeError:
-                    pass
-              
-                
-        section_dict_1 = {**section_dict_headers_list, **section_dict_full_html}
-        section_dict_2 = {**section_dict_full_text, **section_dict_h1, **section_dict_h2, **section_dict_h3, **section_dict_h4}
+#        soup = BS(html)
+#        for tag in soup():
+#            for attribute in use_less_attribute_list:
+#                del tag[attribute]
+#        for use_less_tag in use_less_tag_list:
+#            while len(soup.find_all(use_less_tag)) > 0:
+#                tag_string ='soup.' + use_less_tag + '.extract()'
+#                exec(tag_string)
+#        for x in soup.find_all():
+#            if len(x.text) == 0:
+#                x.extract()
+#
+#        
+#        section_dict_h1 = {}
+#        first_h1_tag = soup.find("h1")
+#        h1_tag_list=first_h1_tag.parent.findChildren('h1')
+#        for h1_tag in h1_tag_list:
+#            h1_tag_count=0
+#            h1_tag_siblings=h1_tag.nextSiblingGenerator()
+#            h1_tag_sibling_list = []
+#            for h1_tag_sibling in h1_tag_siblings:
+#                if h1_tag_sibling.name in ['h1']:
+#                    h1_tag_count += 1
+#                if h1_tag_count > 0:
+#                    section_dict_h1[h1_tag.get_text()] = ' '.join(h1_tag_sibling_list)
+#                    break
+#                try:
+#                    h1_tag_sibling_list.append(h1_tag_sibling.get_text())
+#                except AttributeError:
+#                    pass
+#
+#
+#        section_dict_h2 = {}
+#        first_h2_tag = soup.find("h1")
+#        h2_tag_list=first_h2_tag.parent.findChildren('h2')
+#        for h2_tag in h2_tag_list:
+#            h1_h2_tag_count = 0
+#            h2_tag_siblings = h2_tag.nextSiblingGenerator()
+#            h2_tag_sibling_list = []
+#            for h2_tag_sibling in h2_tag_siblings:
+#                if h2_tag_sibling.name in ['h1','h2']:
+#                    h1_h2_tag_count += 1
+#                if h1_h2_tag_count > 0:
+#                    section_dict_h2[h2_tag.get_text()] = ' '.join(h2_tag_sibling_list)
+#                    break
+#                try:
+#                    h2_tag_sibling_list.append(h2_tag_sibling.get_text())
+#                except AttributeError:
+#                    pass
+#            
+#            
+#        section_dict_h3 = {}
+#        first_h3_tag = soup.find("h1")
+#        h3_tag_list=first_h3_tag.parent.findChildren('h3')
+#        for h3_tag in h3_tag_list:
+#            h1_h2_h3_tag_count = 0
+#            h3_tag_siblings = h3_tag.nextSiblingGenerator()
+#            h3_tag_sibling_list = []
+#            for h3_tag_sibling in h3_tag_siblings:
+#                if h3_tag_sibling.name in ['h1','h2','h3']:
+#                    h1_h2_h3_tag_count += 1
+#                if h1_h2_h3_tag_count > 0:
+#                    section_dict_h3[h3_tag.get_text()] = ' '.join(h3_tag_sibling_list)
+#                    break
+#                try:
+#                    h3_tag_sibling_list.append(h3_tag_sibling.get_text())
+#                except AttributeError:
+#                    pass
+#
+#
+#        section_dict_h4 = {}
+#        first_h4_tag = soup.find("h1")
+#        h4_tag_list=first_h4_tag.parent.findChildren('h4')
+#        for h4_tag in h4_tag_list:
+#            h1_h2_h3_h4_tag_count = 0
+#            h4_tag_siblings = h4_tag.nextSiblingGenerator()
+#            h4_tag_sibling_list = []
+#            for h4_tag_sibling in h4_tag_siblings:
+#                if h4_tag_sibling.name in ['h1','h2','h3','h4']:
+#                    h1_h2_h3_h4_tag_count += 1
+#                if h1_h2_h3_h4_tag_count > 0:
+#                    section_dict_h4[h4_tag.get_text()] = ' '.join(h4_tag_sibling_list)
+#                    break
+#                try:
+#                    h4_tag_sibling_list.append(h4_tag_sibling.get_text())
+#                except AttributeError:
+#                    pass
+#              
+#                
+#        section_dict_1 = {**section_dict_headers, **section_dict_full_html}
+#        section_dict_2 = {**section_dict_full_text, **section_dict_h1, **section_dict_h2, **section_dict_h3, **section_dict_h4}
+        section_dict_1 = {**section_dict_headers, **section_dict_full_html}
+        section_dict_2 = {**section_dict_full_text, **section_dict_headers_contents}
 
 
 #        for key, value in section_dict_2.items():
 #            section_dict_2[key] = EsPreProcessor.es_preprocessor_manager(value, pre_processor).es_pre_processed_corpus
+
         
         es = Elasticsearch()
         es.index(index=index_1_names[0], doc_type=index_1_names[1], id=(file_no + 1), body = section_dict_1)
-        es.index(index=index_2_names[0], doc_type=index_2_names[1], id=(file_no + 1), body = section_dict_2)
+        es.index(index=index_2_names[0], doc_type=index_2_names[1], id=(file_no + 1), body = section_dict_2, ignore = 400)
 
 
 def es_search_processor(es_sch_doctype, 
@@ -169,8 +160,9 @@ def es_search_processor(es_sch_doctype,
 
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/002_tikka'
 files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/001_libre'
-index_1_names = ['index_3', 'doc_type_1']
-index_2_names = ['index_4', 'doc_type_2']
+#files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/003_test'
+index_1_names = ['index_1', 'doc_type_1']
+index_2_names = ['index_2', 'doc_type_2']
 pre_processor = {'preprocessor': [
     {'name':'tokenizer','param':[{'tokenizer':'word_tokenize'}]},
     {'name':'stemmer','param':[{'stemmer':'PorterStemmer'}]},
