@@ -317,7 +317,7 @@ for x in soup.find_all():
     if len(x.text) == 0:
         x.extract()
 section_dict = {}
-section_dict_tag = {}
+section_dict_bullets = {}
 
 for header in range(len(headers_list)):
     header_tag = None
@@ -331,7 +331,6 @@ for header in range(len(headers_list)):
         header_tag_siblings = component_tag.nextSiblingGenerator()
         header_tag_sibling_list = []
         header_tag_sibling_tag_list = []
-        new_tag = BS('').new_tag('kgabcdefg')
         for header_tag_sibling in header_tag_siblings:
             if header_tag_sibling.name in (headers_list[:(header + 1)]):
                 # may need to add exception for key error
@@ -347,7 +346,7 @@ for header in range(len(headers_list)):
                 except AttributeError:
                     pass
                 if bundled_bullet_text_list:
-                    section_dict_tag[component_tag.get_text()] = ' '.join(bundled_bullet_text_list)
+                    section_dict_bullets[component_tag.get_text()] = ' '.join(bundled_bullet_text_list)
                 del new_tag
                 break
             try:
@@ -355,4 +354,30 @@ for header in range(len(headers_list)):
                 header_tag_sibling_tag_list.append(header_tag_sibling)
             except AttributeError:
                 pass
+section_dict_full_content = {}
+section_dict_full_content['section contents'] = [section_dict, section_dict_tag]
+            
 #    return section_dict
+import json
+import requests
+
+# get mapping fields for a specific index:
+index = "index_2"
+elastic_url = "http://localhost:9200/"
+doc_type = "doc_type_2"
+mapping_fields_request = "_mapping/field/*?ignore_unavailable=false&allow_no_indices=false&include_defaults=true"
+mapping_fields_url = "/".join([elastic_url, index, doc_type, mapping_fields_request])
+response = requests.get('http://localhost:9200/index_2/_mapping?pretty')
+
+data = response.content.decode()
+parsed_data = json.loads(data)
+keys = sorted(parsed_data[index]["mappings"][doc_type].keys())
+print("index= {} has a total of {} keys".format(index, len(keys)))
+
+print (parsed_data)
+import sys
+filename  = open('out1.txt','w')
+sys.stdout = filename
+
+
+type(parsed_data)

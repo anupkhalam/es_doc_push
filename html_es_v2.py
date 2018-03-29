@@ -108,8 +108,31 @@ es_query_pre_processor = {1:{'tokenizer' : 'word_tokenize', # Number '1' denotes
                              'joiner' : [' '], # 'joiner' must be a list with single element.
                              'replacer' : ['the', '$$$']}} # 'replacer' must be a list with two elements. First element: char to be replaced; Second element: Char to be placed.
 #es_search_body = {"query": {"multi_match" : {"query": "What are the responsibilities of Bank Mandiri?", "fields": [ "Assumptions", "Scope of Work" ]}}}
-es_search_body = {"query": {"multi_match" : {"query": "What are the responsibilities of Bank Mandiri?", "fields": [ "Full Text" ]}}}
+es_search_body = {"query": {"multi_match" : {"query": "What are the responsibilities of Bank Mandiri?", "fields": [ "Full Text", "Sections.Section bullets.PART VII YOUR PRESCRIPTION DRUG BENEFITS" ]}}}
 d = es_search_processor(es_search_index,es_search_doctype,es_search_body)
 
 
+import json
+import requests
+
+# get mapping fields for a specific index:
+index = "index_2"
+elastic_url = "http://localhost:9200/"
+doc_type = "doc_type_2"
+mapping_fields_request = "_mapping/field/*?ignore_unavailable=false&allow_no_indices=false&include_defaults=true"
+mapping_fields_url = "/".join([elastic_url, index, doc_type, mapping_fields_request])
+response = requests.get('http://localhost:9200/index_2/_mapping?pretty')
+
+data = response.content.decode()
+parsed_data = json.loads(data)
+keys = sorted(parsed_data[index]["mappings"][doc_type].keys())
+print("index= {} has a total of {} keys".format(index, len(keys)))
+
+print (parsed_data)
+import sys
+filename  = open('out1.txt','w')
+sys.stdout = filename
+
+
+type(parsed_data)
 
