@@ -165,19 +165,9 @@ soup = BS(html)
 
 
 headers_list = ['h1','h2','h3','h4','h5']
-#headers_list = ['h3']
-use_less_attribute_list = ["class", "id", "name", "style", "face", "size", "align", "width", "height", "cellspacing", "cellpadding", "start", "color", "bgcolor", "valign", "start"]
-use_less_tag_list = ['img','meta','title','head','style','table']
-#for tag in soup():
-#    for attribute in use_less_attribute_list:
-#        del tag[attribute]
-#for use_less_tag in use_less_tag_list:
-#    while len(soup.find_all(use_less_tag)) > 0:
-#        tag_string ='soup.' + use_less_tag + '.extract()'
-#        exec(tag_string)
-#for x in soup.find_all():
-#    if len(x.text) == 0:
-#        x.extract()
+for x in soup.find_all():
+    if len(x.text) == 0:
+        x.extract()
 section_dict = {}
 
 for header in range(len(headers_list)):
@@ -209,7 +199,160 @@ for header in range(len(headers_list)):
 
 
 
+j = {'abc':{'a1':'b1','a2':'b2','a3':'b3'}}
+
+es = Elasticsearch()
+es.index(index='atsc',doc_type = 'sdfr', id = 2, body = j)
 
 
 
-    
+
+from elasticsearch import Elasticsearch
+from bs4 import BeautifulSoup as BS
+import glob
+from preprocess_class import EsPreProcessor
+import warnings
+from html_processing import *
+
+warnings.filterwarnings('ignore')
+
+file = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/002_tikka/BA72-01012018-SOB.html'
+
+with open (file) as f:
+    temp_html_file = [line.rstrip() for line in f]
+    html_file = ''
+    html_strip_file = ''
+    for line in temp_html_file:
+        html_file += (line + '\n')
+        html_strip_file += (line)
+    html = html_strip_file
+
+
+soup = BS(html)
+
+
+headers_list = ['h1','h2','h3','h4','h5']
+for x in soup.find_all():
+    if len(x.text) == 0:
+        x.extract()
+section_dict = {}
+section_dict_tag = {}
+
+for header in range(len(headers_list)):
+    header_tag = None
+    header_tag = soup.find(headers_list[header])
+    header_tag_list = []
+    if header_tag is not None:
+        header_tag_list = header_tag.parent.findChildren(headers_list[header])
+    if len(header_tag_list) == 0:
+        break
+    for component_tag in header_tag_list:
+        header_tag_count = 0
+        header_tag_siblings = component_tag.nextSiblingGenerator()
+        header_tag_sibling_list = []
+        header_tag_sibling_tag_list = []
+        #create a blank tag
+        new_tag = BS('').new_tag('kgabcdefg')
+        
+        for header_tag_sibling in header_tag_siblings:
+            if header_tag_sibling.name in (headers_list[:(header + 1)]):
+                header_tag_count += 1
+            if header_tag_count > 0:
+
+                # may need to add exception for key error
+                section_dict[component_tag.get_text()] = ' '.join(header_tag_sibling_list)
+                section_dict_tag[component_tag.get_text()] = new_tag
+                new_tag = BS('').new_tag('kgabcdefg')
+                break
+            try:
+                print ("****************")
+                header_tag_sibling_list.append(header_tag_sibling.get_text())
+                new_tag.append(header_tag_sibling)
+            except AttributeError:
+                pass
+#    return section_dict
+
+soup = BS(' ')
+k = soup.new_tag('kgabcdefg')
+soup = BS(' ')
+k = soup.new_tag('div')
+new_tag.append(k)
+new_tag.insert_after(header_tag_sibling)
+
+
+
+soup.sometag.name = 'newtag'
+soup.newtag.wrap(soup.new_tag('sometag'))
+
+
+
+
+
+from elasticsearch import Elasticsearch
+from bs4 import BeautifulSoup as BS
+import glob
+from preprocess_class import EsPreProcessor
+import warnings
+from html_processing import *
+
+warnings.filterwarnings('ignore')
+
+file = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/002_tikka/AMCS-N-G4-000562.html'
+
+with open (file) as f:
+    temp_html_file = [line.rstrip() for line in f]
+    html_file = ''
+    html_strip_file = ''
+    for line in temp_html_file:
+        html_file += (line + '\n')
+        html_strip_file += (line)
+    html = html_strip_file
+
+
+soup = BS(html)
+
+
+headers_list = ['h1','h2','h3','h4','h5']
+for x in soup.find_all():
+    if len(x.text) == 0:
+        x.extract()
+section_dict = {}
+section_dict_tag = {}
+
+for header in range(len(headers_list)):
+    header_tag = None
+    header_tag = soup.find(headers_list[header])
+    header_tag_list = []
+    if header_tag is not None:
+        header_tag_list = header_tag.parent.findChildren(headers_list[header])
+    if len(header_tag_list) == 0:
+        break
+    for component_tag in header_tag_list:
+        header_tag_siblings = component_tag.nextSiblingGenerator()
+        header_tag_sibling_list = []
+        header_tag_sibling_tag_list = []
+        new_tag = BS('').new_tag('kgabcdefg')
+        for header_tag_sibling in header_tag_siblings:
+            if header_tag_sibling.name in (headers_list[:(header + 1)]):
+                # may need to add exception for key error
+                section_dict[component_tag.get_text()] = ' '.join(header_tag_sibling_list)
+                new_tag = BS('').new_tag('kgabcdefg')
+                for i in header_tag_sibling_tag_list:
+                    new_tag.append(i)
+                bundled_bullet_tag_list = []
+                bundled_bullet_tag_list = new_tag.find_all('p', class_ = 'list_Paragraph')
+                bundled_bullet_text_list = []
+                try:
+                    bundled_bullet_text_list = [j.get_text() for j in bundled_bullet_tag_list]
+                except AttributeError:
+                    pass
+                if bundled_bullet_text_list:
+                    section_dict_tag[component_tag.get_text()] = ' '.join(bundled_bullet_text_list)
+                del new_tag
+                break
+            try:
+                header_tag_sibling_list.append(header_tag_sibling.get_text())
+                header_tag_sibling_tag_list.append(header_tag_sibling)
+            except AttributeError:
+                pass
+#    return section_dict
