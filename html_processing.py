@@ -45,7 +45,7 @@ def full_headers_extraction(soup, headers_list):
 
 
 
-def full_header_content_extraction(soup, headers_list):
+def header_content_extraction(soup, headers_list):
     for x in soup.find_all():
         if len(x.text) == 0:
             x.extract()
@@ -94,10 +94,6 @@ def full_header_content_extraction(soup, headers_list):
     return full_content_dict
 
 
-def full_headers_contents_sepearted(soup, headers_list):
-    for x in soup.find_all():
-        if len(x.text) == 0:
-            x.extract()
 
 
     
