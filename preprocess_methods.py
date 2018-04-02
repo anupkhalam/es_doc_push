@@ -48,3 +48,9 @@ def splitjoiner(corpus, params):
     return preprocessed_corpus
 
 
+def caseconverter(corpus, params):
+    for component in params:
+        preprocessed_corpus = eval('corpus.' + component['type'] + '()')
+    return preprocessed_corpus
+
+

@@ -19,7 +19,7 @@ from preprocessor_collection import *
 def es_index_create(files_location,                                 # location of html files
                     index_1_names,                                  # name of index 1
                     index_2_names,                                  # name of index 2
-                    pre_processor):                                 # preprocessor 
+                    pre_processor):                                 # preprocessor
     file_list = glob.glob(files_location + '/*.html')
     # this should come as an argument or from db
     headers_list = ['h1','h2','h3','h4','h5']
@@ -85,9 +85,9 @@ def es_search_processor(es_sch_doctype,
 files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/002_tikka'
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/001_libre'
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/003_test'
-index_1_names = ['index_5', 'doc_type_1']
-index_2_names = ['index_6', 'doc_type_2']
-pre_processor = pre_processor_02
+index_1_names = ['index_9', 'doc_type_1']
+index_2_names = ['index_10', 'doc_type_2']
+pre_processor = pre_processor_04
 es_index_create(files_location, index_1_names, index_2_names, pre_processor)
 
 
