@@ -6,6 +6,7 @@ Created on Fri Mar 23 11:27:48 2018
 @author: anup
 """
 
+
 from elasticsearch import Elasticsearch
 from bs4 import BeautifulSoup as BS
 import glob
@@ -50,19 +51,14 @@ def es_index_create(files_location, index_1_names, index_2_names, pre_processor)
         # full header content extraction
         section_dict_headers_contents = full_header_content_extraction(BS(html), headers_list)
 
-
         # full header content extraction with paragraph and bullet separation
         section_dict_headers_contents_sepearted = full_headers_contents_sepearted(BS(html), headers_list)
-
-
-        section_dict_settings = {}
-        section_dict_settings["settings"] = {"index.mapping.total_fields.limit": 2000}
 
         # assembling contents for the first index
         section_dict_1 = {**section_dict_headers, **section_dict_full_html}
 
         # assembling contents for the second index
-        section_dict_2 = {**section_dict_settings, **section_dict_full_text, **section_dict_headers_contents}
+        section_dict_2 = {**section_dict_full_text, **section_dict_headers_contents}
 
 
 #        for key, value in section_dict_2.items():
@@ -87,8 +83,8 @@ def es_search_processor(es_sch_doctype,
 files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/002_tikka'
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/001_libre'
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/003_test'
-index_1_names = ['index_1', 'doc_type_1']
-index_2_names = ['index_2', 'doc_type_2']
+index_1_names = ['index_3', 'doc_type_1']
+index_2_names = ['index_4', 'doc_type_2']
 pre_processor = {'preprocessor': [
     {'name':'tokenizer','param':[{'tokenizer':'word_tokenize'}]},
     {'name':'stemmer','param':[{'stemmer':'PorterStemmer'}]},
@@ -112,27 +108,4 @@ es_search_body = {"query": {"multi_match" : {"query": "What are the responsibili
 d = es_search_processor(es_search_index,es_search_doctype,es_search_body)
 
 
-import json
-import requests
-
-# get mapping fields for a specific index:
-index = "index_2"
-elastic_url = "http://localhost:9200/"
-doc_type = "doc_type_2"
-mapping_fields_request = "_mapping/field/*?ignore_unavailable=false&allow_no_indices=false&include_defaults=true"
-mapping_fields_url = "/".join([elastic_url, index, doc_type, mapping_fields_request])
-response = requests.get('http://localhost:9200/index_2/_mapping?pretty')
-
-data = response.content.decode()
-parsed_data = json.loads(data)
-keys = sorted(parsed_data[index]["mappings"][doc_type].keys())
-print("index= {} has a total of {} keys".format(index, len(keys)))
-
-print (parsed_data)
-import sys
-filename  = open('out1.txt','w')
-sys.stdout = filename
-
-
-type(parsed_data)
 

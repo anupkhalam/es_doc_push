@@ -69,7 +69,7 @@ def full_header_content_extraction(soup, headers_list):
             for header_tag_sibling in header_tag_siblings:
                 if header_tag_sibling.name in (headers_list[:(header + 1)]):
                     # may need an exception for key error
-                    section_dict[component_tag.get_text()] = ' '.join(header_tag_sibling_list)
+                    section_dict[component_tag.get_text() + '[Full Contents]'] = ' '.join(header_tag_sibling_list)
                     new_tag = BS('').new_tag('kgabcdefg')
                     for bullet_tag in header_tag_sibling_tag_list:
                         new_tag.append(bullet_tag)
@@ -81,7 +81,7 @@ def full_header_content_extraction(soup, headers_list):
                     except AttributeError:
                         pass
                     if bundled_bullet_text_list:
-                        section_dict_bullets[component_tag.get_text()] = ' '.join(bundled_bullet_text_list)
+                        section_dict_bullets[component_tag.get_text() + '[Bullets Only]'] = ' '.join(bundled_bullet_text_list)
                     del new_tag
                     break
                 try:
@@ -91,7 +91,7 @@ def full_header_content_extraction(soup, headers_list):
                     pass
     
     full_content_dict = {}
-    full_content_dict['Sections'] = {'Section contents' : section_dict, 'Section bullets' : section_dict_bullets}
+    full_content_dict['Sections'] = {**section_dict, **section_dict_bullets}
     return full_content_dict
 
 

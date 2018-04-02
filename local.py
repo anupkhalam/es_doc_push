@@ -381,3 +381,22 @@ sys.stdout = filename
 
 
 type(parsed_data)
+
+def myprint(d):
+    for k, v in d.items():
+        if k == 'Section bullets':
+            return v
+        myprint(v)
+
+
+j=myprint(parsed_data)
+type(j)
+
+
+
+for d in parsed_data.values():
+    print (d['Section bullets'])
+
+
+
+
