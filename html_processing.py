@@ -90,8 +90,7 @@ def full_header_content_extraction(soup, headers_list):
                 except AttributeError:
                     pass
     
-    full_content_dict = {}
-    full_content_dict['Sections'] = {**section_dict, **section_dict_bullets}
+    full_content_dict = {**section_dict, **section_dict_bullets}
     return full_content_dict
 
 
@@ -99,7 +98,7 @@ def full_headers_contents_sepearted(soup, headers_list):
     for x in soup.find_all():
         if len(x.text) == 0:
             x.extract()
-    
+
 
     
     

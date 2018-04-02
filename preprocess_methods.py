@@ -37,3 +37,14 @@ def stemmer(corpus, params):
     return preprocessed_corpus
     
 
+def splitter(corpus, params):
+    for component in params:
+        preprocessed_corpus = corpus.split(component['splitter'])
+    return preprocessed_corpus
+
+
+def splitjoiner(corpus, params):
+    preprocessed_corpus = ' '.join(corpus.split())
+    return preprocessed_corpus
+
+

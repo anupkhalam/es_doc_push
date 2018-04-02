@@ -14,17 +14,20 @@ from preprocess_class import EsPreProcessor
 import warnings
 from html_processing import *
 warnings.filterwarnings('ignore')
+from preprocessor_collection import *
 
-
-def es_index_create(files_location, index_1_names, index_2_names, pre_processor):
+def es_index_create(files_location,                                 # location of html files
+                    index_1_names,                                  # name of index 1
+                    index_2_names,                                  # name of index 2
+                    pre_processor):                                 # preprocessor 
     file_list = glob.glob(files_location + '/*.html')
     # this should come as an argument or from db
     headers_list = ['h1','h2','h3','h4','h5']
 
 
     # create index in elasticsearch with necessary field limit
-    es = Elasticsearch()
-    doc = {"settings": {"index.mapping.total_fields.limit": 10000}}
+    es = Elasticsearch()                                            # initialize elasticsearch
+    doc = {"settings": {"index.mapping.total_fields.limit": 10000}} # setting the field limit
     es.indices.create(index = index_1_names[0], body = doc)
     es.indices.create(index = index_2_names[0], body = doc)
 
@@ -60,9 +63,8 @@ def es_index_create(files_location, index_1_names, index_2_names, pre_processor)
         # assembling contents for the second index
         section_dict_2 = {**section_dict_full_text, **section_dict_headers_contents}
 
-
-#        for key, value in section_dict_2.items():
-#            section_dict_2[key] = EsPreProcessor.es_preprocessor_manager(value, pre_processor).es_pre_processed_corpus
+        for key, value in section_dict_2.items():
+            section_dict_2[key] = EsPreProcessor.es_preprocessor_manager(value, pre_processor).es_pre_processed_corpus
 
         
         es.index(index=index_1_names[0], doc_type=index_1_names[1], id=(file_no + 1), body = section_dict_1)
@@ -83,14 +85,9 @@ def es_search_processor(es_sch_doctype,
 files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/002_tikka'
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/001_libre'
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/003_test'
-index_1_names = ['index_3', 'doc_type_1']
-index_2_names = ['index_4', 'doc_type_2']
-pre_processor = {'preprocessor': [
-    {'name':'tokenizer','param':[{'tokenizer':'word_tokenize'}]},
-    {'name':'stemmer','param':[{'stemmer':'PorterStemmer'}]},
-    {'name':'joiner','param':[{'joiner':'&&&&'}]},
-    {'name':'replacer','param':[{'replacer':['the','$$$']},
-    {'replacer':['assumption','asssssssssumption']}]}]}
+index_1_names = ['index_5', 'doc_type_1']
+index_2_names = ['index_6', 'doc_type_2']
+pre_processor = pre_processor_02
 es_index_create(files_location, index_1_names, index_2_names, pre_processor)
 
 

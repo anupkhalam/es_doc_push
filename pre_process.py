@@ -78,5 +78,3 @@ class EsInputPreprocessing():
         self.es_processed_corpus = self.es_processed_corpus.replace(self.es_corpus_replacer[0], self.es_corpus_replacer[1])
         return self.es_processed_corpus
         
-def test(crazy):
-    return crazy

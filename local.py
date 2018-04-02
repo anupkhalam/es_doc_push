@@ -399,4 +399,6 @@ for d in parsed_data.values():
 
 
 
-
+import sys
+filename  = open('out1','w')
+sys.stdout = filename

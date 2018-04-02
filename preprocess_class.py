@@ -7,6 +7,7 @@ Created on Mon Mar 26 13:23:43 2018
 """
 from preprocess_methods import *
 
+
 class EsPreProcessor(object):
     def __init__(self, es_corpus_data = None, es_preprocessor = None):
         self.es_corpus_data = es_corpus_data
