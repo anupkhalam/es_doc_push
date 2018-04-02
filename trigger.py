@@ -12,24 +12,12 @@ from html_indexer import *
 files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/002_tikka'
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/001_libre'
 #files_location = '/home/anup/03_test_scripts/08_elastic_search/kg/converted/003_test'
-index_1_names = ['index_11', 'doc_type_1']
-index_2_names = ['index_12', 'doc_type_2']
-pre_processor = pre_processor_04
+index_1_names = ['index_1', 'doc_type_1']
+index_2_names = ['index_2', 'doc_type_2']
+pre_processor = pre_processor_03
 es_index_create(files_location, index_1_names, index_2_names, pre_processor)
 
 
-
-
-es_search_index = 'index_2'
-es_search_doctype = 'doc_type_2'
-es_user_query = 'What are the responsibilities of Bank Mandiri?'
-es_query_pre_processor = {1:{'tokenizer' : 'word_tokenize', # Number '1' denotes first processor set. Any number of processor may be defined in the pipeline.
-                             'stemmer' : 'porterstemmer', 
-                             'joiner' : [' '], # 'joiner' must be a list with single element.
-                             'replacer' : ['the', '$$$']}} # 'replacer' must be a list with two elements. First element: char to be replaced; Second element: Char to be placed.
-#es_search_body = {"query": {"multi_match" : {"query": "What are the responsibilities of Bank Mandiri?", "fields": [ "Assumptions", "Scope of Work" ]}}}
-es_search_body = {"query": {"multi_match" : {"query": "What are the responsibilities of Bank Mandiri?", "fields": [ "Full Text", "Sections.Section bullets.PART VII YOUR PRESCRIPTION DRUG BENEFITS" ]}}}
-d = es_search_processor(es_search_index,es_search_doctype,es_search_body)
-
-
+k='<p class="body_Text"><b>Note: Certain policies and contracts may not be covered or fully covered. </b>For example, coverage does not extend to any portion(s) of a policy or contract that the insurer does not guarantee, such as certain investment additions to the account value of a variable life insurance  policy  or  a variable  annuity  contract. There are also various residency requirements and other limitations under Colorado law.</p>'
+j=BS(k)
 

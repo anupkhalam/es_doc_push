@@ -44,13 +44,13 @@ def es_index_create(files_location,                                 # location o
             html = html_strip_file
 
         # extract whole html
-        section_dict_full_html = full_html_extraction(html_file)
+        section_dict_full_html = html_extraction(html_file)
 
         # extract whole text from html
-        section_dict_full_text = full_text_extraction(BS(html))
+        section_dict_full_text = text_extraction(BS(html))
         
         # extract user-specified header levels
-        section_dict_headers = full_headers_extraction(BS(html), headers_list)
+        section_dict_headers = header_extraction(BS(html), headers_list)
 
         # extract contents under the headers
         section_dict_headers_contents = header_content_extraction(BS(html), headers_list)
