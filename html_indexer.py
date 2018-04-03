@@ -53,7 +53,7 @@ def es_index_create(files_location,                                 # location o
         section_dict_headers = header_extraction(BS(html), headers_list)
 
         # extract contents under the headers
-        section_dict_headers_contents = header_content_extraction(BS(html), headers_list)
+        section_dict_headers_contents = header_content_extraction(html, headers_list)
 
         # assembling contents for the first index
         section_dict_1 = {**section_dict_headers, **section_dict_full_html}
