@@ -83,7 +83,7 @@ def header_content_extraction(html, headers_list):
                     except AttributeError:
                         pass
                     if bundled_bullet_text_list:
-                        section_dict_bullets[component_tag.get_text().replace('.',' ') + '[Bullets Only]'] = ' '.join(bundled_bullet_text_list)
+                        section_dict_bullets[component_tag.get_text().replace('.','_') + '[Bullets Only]'] = ' '.join(bundled_bullet_text_list)
                     del new_tag
                     break
                 try:
@@ -114,6 +114,21 @@ def header_content_extraction(html, headers_list):
     
     full_content_dict = {**section_dict, **section_dict_bullets, **section_dict_bold}
     return full_content_dict
+
+
+def headers_iteration_method(html, headers_list):
+    for header in range(len(headers_list)):
+        soup = BS(html)
+        header_tag = None
+        header_tag = soup.find(headers_list[header])
+        if header_tag is None:
+            continue
+        header_tag_list = []
+        header_tag_list = header_tag.parent.findChildren(headers_list[header])
+        if len(header_tag_list) == 0:
+            continue
+        yield header_tag_list
+
 
 
 

@@ -568,3 +568,16 @@ full_content_dict = {**section_dict, **section_dict_bullets, **section_dict_bold
 
 list(full_content_dict.keys())
 
+def createGenerator():
+    mylist = range(12)
+    for i in mylist:
+        if i==3:
+            continue
+        yield i*i
+        
+j=createGenerator()
+print (j)
+for k in j:
+    print (k)
+
+
